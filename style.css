@@ -286,6 +286,23 @@ pre {
     /*background: goldenrod;*/ }
 
 /* =============================================================================
+                   Single Portfolio
+   ========================================================================== */
+.topImage .image {
+  height: 300px;
+  background-attachment: fixed;
+  background-size: cover; }
+
+/* =============================================================================
+                   Single Portfolio
+   ========================================================================== */
+.about {
+  background: #FFF291;
+  width: 50%;
+  float: left;
+  padding: 5%; }
+
+/* =============================================================================
                    Sidebar
    ========================================================================== */
 .sidebar {
@@ -327,7 +344,13 @@ ul.menu li a {
 
 .menu {
   float: right;
-  display: block; }
+  display: block;
+  padding: 10px; }
+  .menu .menu-item:hover a {
+    padding: 15px; }
+  .menu .menu-item:hover a:hover {
+    border: 2px solid black;
+    padding: 13px; }
 
 /* =============================================================================
                    Comment Styling
