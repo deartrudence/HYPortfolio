@@ -10,6 +10,7 @@
   <?php // Load our CSS ?>
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
 
   <?php wp_head(); ?>
 </head>
@@ -18,18 +19,18 @@
 <body <?php body_class(); ?>>
 
 <header>
-  <div class="container">
-    <h1>
+  <!-- <div class="container"> -->
+    <div class="topNav clearfix">
+    <h1 class="home">
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
+        dear trudence
       </a>
     </h1>
-    <div class="topNav clearfix">
       <?php wp_nav_menu( array(
         'container' => false,
         'theme_locations' => 'primary'
       )); ?>
     </div>
-  </div> <!-- /.container -->
+  <!-- </div> /.container -->
 </header><!--/.header-->
 

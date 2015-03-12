@@ -170,7 +170,8 @@ img.alignright {
                    Default Styling
    ========================================================================== */
 body {
-  color: #333; }
+  color: #333;
+  font-family: 'Cutive Mono'; }
 
 .container {
   max-width: 100%;
@@ -186,7 +187,7 @@ body {
 
 /* links */
 a {
-  color: grey;
+  color: #222;
   text-decoration: none; }
 
 figure {
@@ -194,7 +195,7 @@ figure {
   width: 50%; }
 
 a:hover {
-  color: black; }
+  color: #444; }
 
 /* paragraphs */
 p {
@@ -246,23 +247,37 @@ pre {
   column-count: 2;
   column-gap: 0;
   column-fill: auto; }
+  @media (max-width: 1000px) {
+    #columns {
+      -webkit-column-count: 1;
+      column-count: 1; } }
   #columns .block {
     width: 100%;
     /* Or whatever */
     background: grey;
+    border: 2px solid white;
     text-align: center;
-    height: 540px;
+    min-height: 540px;
     -webkit-column-break-inside: avoid;
     column-break-inside: avoid;
     margin: 0;
     padding: 5%; }
+    #columns .block h2 {
+      font-weight: bold; }
+    #columns .block:hover {
+      font-weight: bold; }
+    #columns .block .featuredPost {
+      padding: 5px; }
   #columns img {
     display: block;
     margin: 5% auto;
-    width: 50%;
+    width: 55%;
     height: 100%; }
+    #columns img:hover {
+      -webkit-filter: brightness(110%);
+      width: 60%; }
   #columns .block:first-child {
-    height: 270px;
+    min-height: 270px;
     background-color: #F7F7F7; }
   #columns .block:nth-child(2) {
     background-color: #C0E8FF; }
@@ -279,7 +294,7 @@ pre {
   #columns .block:nth-child(8) {
     background-color: #DDF597; }
   #columns .block:last-child {
-    height: 270px; }
+    min-height: 270px; }
   #columns h2 {
     margin: 0; }
   #columns .block:nth-child(odd) {
@@ -289,18 +304,60 @@ pre {
                    Single Portfolio
    ========================================================================== */
 .topImage .image {
-  height: 300px;
+  height: 400px;
   background-attachment: fixed;
   background-size: cover; }
+  @media (max-width: 750px) {
+    .topImage .image {
+      background-attachment: scroll; } }
+  @media (max-width: 580px) {
+    .topImage .image {
+      height: 300px; } }
+  @media (max-width: 370px) {
+    .topImage .image {
+      height: 200px; } }
+
+.content {
+  width: 100%; }
+  .content .info {
+    width: 50%;
+    background: #C0E8FF;
+    padding: 5%; }
+    @media (max-width: 860px) {
+      .content .info {
+        width: 100%; } }
 
 /* =============================================================================
                    Single Portfolio
    ========================================================================== */
-.about {
-  background: #FFF291;
+.about, .aboutSkills {
+  background: #DDF499;
   width: 50%;
   float: left;
-  padding: 5%; }
+  padding: 4%;
+  height: 540px; }
+  @media (max-width: 860px) {
+    .about, .aboutSkills {
+      width: 100%; } }
+
+.aboutSkills {
+  background: #f7f7f7; }
+
+.skills {
+  text-align: center; }
+  .skills .fa {
+    border: 2px solid #777;
+    font-size: 22px;
+    border-radius: 50%;
+    padding: 2.5%;
+    margin-right: 5%;
+    transition: 0.5s; }
+    .skills .fa .fa:last-child {
+      margin-right: 0; }
+    .skills .fa:hover {
+      background-color: #222;
+      border: 2px solid #222;
+      color: white; }
 
 /* =============================================================================
                    Sidebar
@@ -328,29 +385,42 @@ footer {
 ul.menu {
   margin: 0;
   padding: 0; }
+  @media (max-width: 575px) {
+    ul.menu {
+      width: 100%; } }
 
 ul.menu li {
   display: inline;
   margin-right: 10px; }
+  @media (max-width: 575px) {
+    ul.menu li {
+      display: block;
+      padding: 3%;
+      float: left; } }
 
 ul.menu li a {
   color: #333;
   padding: 10px;
   background: white;
-  color: #333; }
+  color: #333;
+  transition: 0.5s; }
+  ul.menu li a:hover {
+    background: #222;
+    color: white; }
 
 .topNav {
-  padding: 2%; }
+  padding: 2%;
+  background: white;
+  width: 100%;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5); }
+
+h1.home {
+  margin: 0;
+  float: left; }
 
 .menu {
   float: right;
-  display: block;
-  padding: 10px; }
-  .menu .menu-item:hover a {
-    padding: 15px; }
-  .menu .menu-item:hover a:hover {
-    border: 2px solid black;
-    padding: 13px; }
+  display: block; }
 
 /* =============================================================================
                    Comment Styling

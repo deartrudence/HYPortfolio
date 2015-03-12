@@ -8,27 +8,33 @@
     <a href="<?php the_permalink(); ?>">
       <div class="image" style="background-image: url('<?php echo $thumb_url ?>')"></div>
     </a> 
-  </div>
+  </div> <!-- /.topImage -->
+
   <div class="container">
 
+    
     <div class="content">
   
+      <div class="info">
+        <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-        <h2><?php the_title(); ?></h2>
-        <p><strong>Client Name: </strong><?php the_field('client_name'); ?></p>
-        <p><?php the_field('short_desc') ?></p>
-        <p><?php the_content(); ?></p>
-        <div class="skills">
-          <?php while(has_sub_field('skill')) : ?>
-            <?php $skill = get_sub_field('skill_icon'); ?>
-            <?php echo $skill ?>
-          <?php endwhile; ?>
-        </div>
+          <h2><?php the_title(); ?></h2>
+          <p><strong>Client Name: </strong><?php the_field('client_name'); ?></p>
+          <p><?php the_field('short_desc') ?></p>
+          <p><?php the_content(); ?></p>
+          <div class="skills">
+            <?php while(has_sub_field('skill')) : ?>
+              <?php $skill = get_sub_field('skill_icon'); ?>
+              <?php $skillDesc = get_sub_field('skill_desc') ?>
+              <a href="<?php echo home_url( '/' );?>technologies/<?php echo $skillDesc; ?>">
+                <?php echo $skill ?>
+              </a>
+            <?php endwhile; ?>
+          </div> <!-- /.skills -->
         
+        </div> <!-- /.info -->
 
-        <div class="images">
+ <!--        <div class="images">
           <?php while(has_sub_field('images')) : ?>
             <?php //for every image caption combo, this code is run ?>
             <figure>
@@ -37,7 +43,7 @@
               <figcaption><?php the_sub_field('caption'); ?></figcaption>
             </figure>
           <?php endwhile; //end images loop ?>
-        </div>
+        </div> -->
         <?php //the_content(); ?> 
 
         
