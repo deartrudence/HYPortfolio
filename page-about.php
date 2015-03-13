@@ -25,7 +25,7 @@ get_header();  ?>
 			    <?php the_content(); ?>
 
 			    <?php endwhile; // end the loop?>
-			    <div class="skills">
+			    <div class="contactIcons">
 			    <?php while(has_sub_field('contact_icon')) : ?>
 			    	<?php $url = get_sub_field('contact_url') ?>
 			    	<a href="<?php echo $url ?>" target="_blank">
@@ -33,11 +33,24 @@ get_header();  ?>
 			        	<?php echo $icon ?>
 			        </a>
 			    <?php endwhile; ?>
-			    </div> <!-- /.skills -->
+			    </div> <!-- /.contactIcons -->
 
 			</div> <!-- /.about -->
 		    <div class="aboutSkills">
 		    	<h2>Skills</h2>
+		    	<div class="skills">
+		    	  <?php while(has_sub_field('skill')) : ?>
+		    	    <?php $skill = get_sub_field('skill_icon'); ?>
+		    	    <?php $skillDesc = get_sub_field('skill_desc') ?>
+		    	    <?php $skillExcp = get_sub_field('skill_excerpt') ?>
+		    	    <div class="skillSet clearfix">
+			    	    <a href="<?php echo home_url( '/' );?>technologies/<?php echo $skillDesc; ?>">
+			    	      <?php echo $skill ?>
+			    	    </a>
+			    	    <p class="skill_excerpt"><?php echo $skillExcp ?></p>
+		    	    </div> <!-- /.skillSet -->
+		    	  <?php endwhile; ?>
+		    	</div> <!-- /.skills -->
 		    </div>
 
 

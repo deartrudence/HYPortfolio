@@ -2,8 +2,9 @@
 
 <div class="main">
   <div class="topImage clearfix">
+
     <?php $thumb_id = get_post_thumbnail_id();
-    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'square-size', true);
     $thumb_url = $thumb_url_array[0]; ?>
     <a href="<?php the_permalink(); ?>">
       <div class="image" style="background-image: url('<?php echo $thumb_url ?>')"></div>
@@ -33,6 +34,11 @@
           </div> <!-- /.skills -->
         
         </div> <!-- /.info -->
+        <div class="iframe">
+          <iframe src="<?php the_field('iframe_url') ?>">
+            <p>Your browser does not support iframes.</p>
+          </iframe>
+        </div>
 
  <!--        <div class="images">
           <?php while(has_sub_field('images')) : ?>
