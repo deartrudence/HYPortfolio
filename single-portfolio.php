@@ -7,21 +7,19 @@
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'square-size', true);
     $thumb_url = $thumb_url_array[0]; ?>
     <a href="<?php the_permalink(); ?>">
-      <div class="image" style="background-image: url('<?php echo $thumb_url ?>')"></div>
+      <?php the_post_thumbnail('medium'); ?>
     </a> 
   </div> <!-- /.topImage -->
 
   <div class="container">
 
     
-    <div class="content">
+
   
       <div class="info">
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
           <h2><?php the_title(); ?></h2>
-          <p><strong>Client Name: </strong><?php the_field('client_name'); ?></p>
-          <p><?php the_field('short_desc') ?></p>
           <p><?php the_content(); ?></p>
           <div class="skills">
             <?php while(has_sub_field('skill')) : ?>
@@ -34,10 +32,15 @@
           </div> <!-- /.skills -->
         
         </div> <!-- /.info -->
-        <div class="iframe">
-          <iframe src="<?php the_field('iframe_url') ?>">
-            <p>Your browser does not support iframes.</p>
-          </iframe>
+        <?php $singleImage = get_field('single_image') ?>
+        <div class="singleImage">
+          <a href="<?php the_field('iframe_url')?>" target="_blank">
+            <div class="iframe" style="background-image: url('<?php echo $singleImage['url'] ?>')">
+              <div class="overlay">
+                <p>Click for full site</p>
+              </div>
+            </div>
+          </a>
         </div>
 
  <!--        <div class="images">
@@ -56,7 +59,7 @@
 
       <?php endwhile; // end of the loop. ?>
 
-    </div> <!-- /.content -->
+  
 
    
 

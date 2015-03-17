@@ -50,7 +50,7 @@ $.fn.typewriter = function(options) {
 
 			if (settings.randomTypeSpeed) {
 			// Defines a random time interval
-			var randTime = (Math.random() * 500); // 5 seconds in milliseconds
+			var randTime = (Math.random() * 50); // 5 seconds in milliseconds
 			} else {
 				var randTime = 0;
 			}
@@ -78,6 +78,6 @@ $.fn.typewriter = function(options) {
 					}
 				}, randTime);
 
-		},500); // ends setInterval
+		},300); // ends setInterval
 
 };  // ends fn.typewriter

@@ -2,9 +2,10 @@
 <?php get_header(); ?>
 
 <div class="main">
-  <div class="container">
+  <div class="blogContainer clearfix">
 
     <div class="content">
+    		<h2 class="blogTitle">The Blog</h2>
     		<?php get_template_part( 'loop', 'index' );	?>
     </div> <!--/.content -->
 

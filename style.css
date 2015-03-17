@@ -179,8 +179,11 @@ body {
 
 .content {
   float: left;
-  width: 65%;
-  margin-right: 5%; }
+  width: 70%;
+  padding: 5%; }
+  @media (max-width: 800px) {
+    .content {
+      width: 100%; } }
 
 .full {
   width: 100%; }
@@ -235,7 +238,8 @@ pre {
   background: #F7F7F7;
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+  line-height: 1.5; }
 
 /* =============================================================================
                    page home
@@ -308,42 +312,68 @@ pre {
 /* =============================================================================
                    Single Portfolio
    ========================================================================== */
-.topImage .image {
-  height: 450px;
-  background-attachment: fixed;
-  background-size: cover; }
-  @media (max-width: 750px) {
-    .topImage .image {
-      background-attachment: scroll; } }
-  @media (max-width: 580px) {
-    .topImage .image {
-      height: 300px; } }
-  @media (max-width: 370px) {
-    .topImage .image {
-      height: 200px; } }
+.topImage img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 120px; }
+  @media (max-width: 450px) {
+    .topImage img {
+      margin-top: 30px; } }
 
-.content {
-  width: 100%; }
-  .content .info {
-    float: left;
-    width: 50%;
-    background: #C0E8FF;
-    padding: 5%; }
-    @media (max-width: 860px) {
-      .content .info {
-        width: 100%; } }
-  .content .iframe {
-    width: 50%;
-    background: #f7f7f7;
-    float: left;
-    height: 540px;
-    padding: 5%; }
-    .content .iframe iframe {
-      width: 100%;
-      height: 380px; }
+@media (max-width: 860px) {
+  .container {
+    margin-top: 77px; } }
+@media (max-width: 450px) {
+  .container {
+    margin-top: 25px; } }
+.container .info {
+  float: left;
+  min-height: 540px;
+  width: 50%;
+  background: #C0E8FF;
+  padding: 5%; }
+  @media (max-width: 860px) {
+    .container .info {
+      width: 100%; } }
+.container .singleImage {
+  width: 50%;
+  background: #f7f7f7;
+  float: left;
+  min-height: 540px;
+  padding: 5%; }
+  @media (max-width: 860px) {
+    .container .singleImage {
+      width: 100%; } }
+  .container .singleImage .iframe {
+    position: relative;
+    width: 90%;
+    height: 380px;
+    margin: 0 auto;
+    border: 3px solid black;
+    background-size: cover; }
+    .container .singleImage .iframe:hover .overlay {
+      display: block; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  display: none; }
+  .overlay p {
+    position: relative;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%); }
 
 /* =============================================================================
-                   Single Portfolio
+                   About page
    ========================================================================== */
 .about, .aboutSkills {
   background: #DDF499;
@@ -399,11 +429,44 @@ pre {
       color: white; }
 
 /* =============================================================================
+                   blog
+   ========================================================================== */
+.blogContainer {
+  margin-top: 77px; }
+
+.blogTitle {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold; }
+
+.blogImage {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  margin: 3% 0; }
+
+hr.blogIndex {
+  height: 5px;
+  background: black;
+  margin: 3% 0; }
+
+hr.blogEnd {
+  height: 3.5px;
+  background: black;
+  margin: 3% 0; }
+
+/* =============================================================================
                    Sidebar
    ========================================================================== */
 .sidebar {
   width: 30%;
-  float: left; }
+  float: left;
+  padding: 3%;
+  margin-top: 125px; }
+  @media (max-width: 800px) {
+    .sidebar {
+      width: 100%;
+      margin-top: 35px; } }
 
 .sidebar ul {
   margin: 0;
@@ -412,9 +475,24 @@ pre {
 .sidebar ul li {
   list-style: none; }
 
+#search-2 input {
+  border-radius: 3px;
+  border: 2px solid black;
+  padding: 2%;
+  margin-bottom: 2%; }
+
+.widget-title {
+  border-bottom: 2px solid black; }
+
 /* =============================================================================
                    Footer
    ========================================================================== */
+.footerContainer {
+  text-align: center;
+  background-color: #F7F7F7;
+  border-top: 4px solid white;
+  padding: 1%; }
+
 footer {
   clear: both; }
 
@@ -458,6 +536,9 @@ ul.menu li a {
   width: 100%;
   z-index: 100;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.25); }
+  @media (max-width: 500px) {
+    .topNav {
+      position: static; } }
 
 h1.home {
   margin: 0;
@@ -468,8 +549,18 @@ h1.home {
   display: block; }
 
 /* =============================================================================
+                   404
+   ========================================================================== */
+.container404 {
+  margin-top: 120px;
+  padding: 5%; }
+
+/* =============================================================================
                    Comment Styling
    ========================================================================== */
+#comments {
+  border-top: 2px solid black; }
+
 #comments .navigation {
   padding: 0 0 18px; }
 
@@ -562,7 +653,7 @@ input[type=submit] {
 
 #respond {
   margin-top: 24px;
-  border-top: 1px solid #e7e7e7;
+  border-top: 2px solid black;
   overflow: hidden;
   position: relative; }
 

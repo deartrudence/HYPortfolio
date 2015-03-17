@@ -13,7 +13,7 @@ get_header();  ?>
 	  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 	  $thumb_url = $thumb_url_array[0]; ?>
 	  <a href="<?php the_permalink(); ?>">
-	    <div class="image" style="background-image: url('<?php echo $thumb_url ?>')"></div>
+	    <?php the_post_thumbnail('medium'); ?>
 	  </a> 
 	</div> <!-- /.topImage -->
 

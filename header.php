@@ -21,11 +21,9 @@
 <header>
   <!-- <div class="container"> -->
     <div class="topNav clearfix">
-    <h1 class="home">
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        dear trudence
+        <h1 class="home">dear trudence</h1>
       </a>
-    </h1>
       <?php wp_nav_menu( array(
         'container' => false,
         'theme_locations' => 'primary'
